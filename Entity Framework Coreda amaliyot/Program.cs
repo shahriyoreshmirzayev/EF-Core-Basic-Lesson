@@ -26,12 +26,16 @@ namespace Entity_Framework_Coreda_amaliyot
         public static void QuerySubject()
         {
             EkundalikContext context = new EkundalikContext();
-            List<Subject> list = context.Subjects.ToList();
-
-            foreach (Subject subject in list)
+            List<Subject> Allsubjects = context.Subjects.ToList();
+            foreach (Subject subject in Allsubjects)
             {
+                if(subject.SubjectName == "Dasturlash")
+                {
+                    context.Subjects.Remove(subject);
+                }
                 Console.WriteLine(subject.SubjectName);
             }
+            context.SaveChanges();
             Console.Read();
         }
     }
