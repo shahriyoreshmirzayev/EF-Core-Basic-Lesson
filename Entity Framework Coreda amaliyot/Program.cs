@@ -6,9 +6,14 @@ namespace Entity_Framework_Coreda_amaliyot
     {
         static void Main(string[] args)
         {
+            Start();
+        }
+        public static void Start()
+        {
             //Console.WriteLine("Hello, World!");
             //Query();
-            QuerySubject();
+            //QuerySubject();
+            Teachers();
         }
         public static void Query()
         {
@@ -37,6 +42,15 @@ namespace Entity_Framework_Coreda_amaliyot
             }
             context.SaveChanges();
             Console.Read();
+        }
+        public static void Teachers()
+        {
+            EkundalikContext context = new EkundalikContext();
+            List<Teacher> AllTeachers = context.Teachers.ToList();
+            foreach(Teacher teacher in AllTeachers)
+            {
+                Console.WriteLine($"Teachers: {teacher.ToString()}");
+            }
         }
     }
 }

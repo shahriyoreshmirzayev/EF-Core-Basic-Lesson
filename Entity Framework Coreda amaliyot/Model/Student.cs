@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Entity_Framework_Coreda_amaliyot.Model;
+﻿namespace Entity_Framework_Coreda_amaliyot.Model;
 
 public partial class Student
 {
