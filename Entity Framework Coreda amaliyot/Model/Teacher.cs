@@ -16,4 +16,8 @@ public partial class Teacher
     public virtual Subject Subject { get; set; } = null!;
 
     public virtual ICollection<Student> Students { get; set; } = new List<Student>();
+    public override string ToString()
+    {
+        return $"{FirstName}, {LastName}";
+    }
 }

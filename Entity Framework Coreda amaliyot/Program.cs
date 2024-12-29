@@ -15,6 +15,15 @@ namespace Entity_Framework_Coreda_amaliyot
             //QuerySubject();
             Teachers();
         }
+        public static void Teachers()
+        {
+            EkundalikContext context = new EkundalikContext();
+            List<Teacher> AllTeachers = context.Teachers.ToList();
+            foreach(Teacher teacher in AllTeachers)
+            {
+                Console.WriteLine($"Teachers: {teacher.ToString()}");
+            }
+        }
         public static void Query()
         {
             // Vaqtni qabul qilmasa qabulqildirish kodi
@@ -42,15 +51,6 @@ namespace Entity_Framework_Coreda_amaliyot
             }
             context.SaveChanges();
             Console.Read();
-        }
-        public static void Teachers()
-        {
-            EkundalikContext context = new EkundalikContext();
-            List<Teacher> AllTeachers = context.Teachers.ToList();
-            foreach(Teacher teacher in AllTeachers)
-            {
-                Console.WriteLine($"Teachers: {teacher.ToString()}");
-            }
         }
     }
 }
